@@ -1,4 +1,4 @@
-import { DEFAULT_SETTINGS, STORAGE_KEYS } from "./constants";
+import { DEFAULT_SETTINGS, STORAGE_KEYS, SETTINGS_VERSION } from "./constants";
 import type { SiteSettings } from "./types";
 
 export function loadSettings(): SiteSettings {
@@ -6,7 +6,9 @@ export function loadSettings(): SiteSettings {
     const raw = localStorage.getItem(STORAGE_KEYS.settings);
     if (raw) {
       const parsed = JSON.parse(raw);
-      return { ...DEFAULT_SETTINGS, ...parsed };
+      if (parsed._version === SETTINGS_VERSION) {
+        return { ...DEFAULT_SETTINGS, ...parsed };
+      }
     }
   } catch {}
   return { ...DEFAULT_SETTINGS };

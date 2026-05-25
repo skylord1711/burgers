@@ -27,6 +27,7 @@ export interface ConnectSettings {
 }
 
 export interface SiteSettings {
+  _version?: number;
   isLive: boolean;
   mainGame: string;
   primaryColor: string;
