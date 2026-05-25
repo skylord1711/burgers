@@ -1,6 +1,6 @@
 import type { SiteSettings } from "./types";
 
-export const SETTINGS_VERSION = 3;
+export const SETTINGS_VERSION = 4;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   _version: SETTINGS_VERSION,
@@ -23,7 +23,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       name: "Discord",
       icon: "discord",
       username: "BurgerFrosty",
-      url: "https://discord.gg/burgerfrosty",
+      url: "https://discord.gg/EJMQ4Rhn2v",
       description: "Join the community!",
       isLive: false,
     },
@@ -42,8 +42,8 @@ export const DEFAULT_SETTINGS: SiteSettings = {
     { day: "Tuesday", time: "9:45PM EST", emoji: "🍟" },
     { day: "Wednesday", time: null, emoji: "😴" },
     { day: "Thursday", time: "9:45PM EST", emoji: "🍔" },
-    { day: "Friday", time: "9:45PM EST", emoji: "🔥" },
-    { day: "Saturday", time: "9:45PM EST", emoji: "🎮" },
+    { day: "Friday", time: "9:45PM EST", emoji: "🍔" },
+    { day: "Saturday", time: "9:45PM EST", emoji: "🍟" },
     { day: "Sunday", time: null, emoji: "😴" },
   ],
   connect: {
