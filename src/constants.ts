@@ -1,6 +1,6 @@
 import type { SiteSettings } from "./types";
 
-export const SETTINGS_VERSION = 5;
+export const SETTINGS_VERSION = 6;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   _version: SETTINGS_VERSION,
@@ -39,11 +39,11 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   ],
   schedule: [
     { day: "Monday", time: "9:45PM EST", emoji: "🍔" },
-    { day: "Tuesday", time: "9:45PM EST", emoji: "🍟" },
+    { day: "Tuesday", time: "9:45PM EST", emoji: "🍔" },
     { day: "Wednesday", time: null, emoji: "😴" },
     { day: "Thursday", time: "9:45PM EST", emoji: "🍔" },
     { day: "Friday", time: "9:45PM EST", emoji: "🍔" },
-    { day: "Saturday", time: "9:45PM EST", emoji: "🍟" },
+    { day: "Saturday", time: "9:45PM EST", emoji: "🍔" },
     { day: "Sunday", time: null, emoji: "😴" },
   ],
   connect: {
