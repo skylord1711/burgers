@@ -6,6 +6,7 @@ import {
   Eye,
   EyeOff,
   Power,
+  Target,
   Gamepad2,
   Palette,
   Save,
@@ -48,6 +49,7 @@ export default function ControlPanel({
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState("");
 
+  const [followerGoalInput, setFollowerGoalInput] = useState(String(settings.followerGoal));
   const [localPrimary, setLocalPrimary] = useState(settings.primaryColor);
   const [localSecondary, setLocalSecondary] = useState(settings.secondaryColor);
 
@@ -68,6 +70,14 @@ export default function ControlPanel({
     saveAuth(false);
     onLogout();
     navigate("/");
+  };
+
+  const handleSaveGoal = () => {
+    const val = parseInt(followerGoalInput, 10);
+    if (!isNaN(val) && val > 0) {
+      updateSettings({ followerGoal: val });
+      addToast("Follower goal updated!", "success");
+    }
   };
 
   const handleSaveColors = () => {
@@ -203,6 +213,27 @@ export default function ControlPanel({
                   settings.isLive ? "translate-x-5" : "translate-x-0"
                 }`}
               />
+            </button>
+          </div>
+        </GlassCard>
+
+        <GlassCard>
+          <div className="flex items-center gap-3 mb-4">
+            <Target className="h-5 w-5 text-primary" />
+            <h3 className="font-bold text-white text-sm">Follower Goal</h3>
+          </div>
+          <div className="flex gap-2">
+            <input
+              type="number"
+              value={followerGoalInput}
+              onChange={(e) => setFollowerGoalInput(e.target.value)}
+              className="flex-1 rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
+            <button
+              onClick={handleSaveGoal}
+              className="rounded-xl bg-primary/20 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/30 transition-colors"
+            >
+              Save
             </button>
           </div>
         </GlassCard>

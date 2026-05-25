@@ -1,10 +1,11 @@
 import type { SiteSettings } from "./types";
 
-export const SETTINGS_VERSION = 6;
+export const SETTINGS_VERSION = 7;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   _version: SETTINGS_VERSION,
   isLive: false,
+  followerGoal: 15000,
   mainGame: "Minecraft",
   primaryColor: "#3b82f6",
   secondaryColor: "#a855f7",

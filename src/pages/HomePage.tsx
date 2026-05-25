@@ -54,7 +54,7 @@ export default function HomePage({
 
       <div className={`relative z-10 mx-auto max-w-lg min-h-screen transition-opacity duration-500 ${loading ? "opacity-0" : "opacity-100"}`}>
         <ProfileHeader isLive={settings.isLive} />
-        <StatsBar mainGame={settings.mainGame} />
+        <StatsBar followerGoal={settings.followerGoal} mainGame={settings.mainGame} />
         <TabNavigation tabs={TAB_NAMES} activeTab={activeTab} onTabChange={(tab) => setActiveTab(tab as typeof activeTab)} />
 
         <AnimatePresence mode="wait">
