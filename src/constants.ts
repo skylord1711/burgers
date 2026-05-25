@@ -40,9 +40,9 @@ export const DEFAULT_SETTINGS: SiteSettings = {
 
     supportText:
       "Love what I do? Consider supporting the stream! Your support helps me get better equipment, more games, and of course — more burgers.",
-    button1Label: "📺 Watch Live",
-    button1Icon: "twitch",
-    button1Url: "https://twitch.tv/burgerfrosty",
+    button1Label: "🎵 Follow on TikTok",
+    button1Icon: "tiktok",
+    button1Url: "https://tiktok.com/@burger_frosty",
     button2Label: "💬 Join Discord",
     button2Icon: "discord",
     button2Url: "https://discord.gg/burgerfrosty",
