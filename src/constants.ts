@@ -1,6 +1,6 @@
 import type { SiteSettings } from "./types";
 
-export const SETTINGS_VERSION = 4;
+export const SETTINGS_VERSION = 5;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   _version: SETTINGS_VERSION,
@@ -13,8 +13,8 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       id: "tiktok",
       name: "TikTok",
       icon: "tiktok",
-      username: "@burger_frosty",
-      url: "https://tiktok.com/@burger_frosty",
+      username: "@amburg3rs",
+      url: "https://www.tiktok.com/@amburg3rs",
       description: "Short clips & funny moments",
       isLive: false,
     },
@@ -23,7 +23,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       name: "Discord",
       icon: "discord",
       username: "BurgerFrosty",
-      url: "https://discord.gg/EJMQ4Rhn2v",
+      url: "https://discord.com/invite/EJMQ4Rhn2v",
       description: "Join the community!",
       isLive: false,
     },
@@ -54,7 +54,7 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       "Love what I do? Consider supporting the stream! Your support helps me get better equipment, more games, and of course — more burgers.",
     button1Label: "🎵 Follow on TikTok",
     button1Icon: "tiktok",
-    button1Url: "https://tiktok.com/@burger_frosty",
+    button1Url: "https://www.tiktok.com/@amburg3rs",
     button2Label: "💬 Join Discord",
     button2Icon: "discord",
     button2Url: "https://discord.gg/burgerfrosty",
