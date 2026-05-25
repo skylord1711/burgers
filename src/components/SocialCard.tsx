@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Users } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import GlassCard from "./GlassCard";
 import SvgIcon from "./SvgIcon";
-import { formatCount } from "../utils";
 import type { SocialPlatform } from "../types";
 
 interface SocialCardProps {
@@ -43,10 +42,6 @@ export default function SocialCard({ platform, index, onTrack }: SocialCardProps
           </div>
 
           <div className="flex flex-col items-end gap-2 shrink-0">
-            <div className="flex items-center gap-1 text-xs text-slate-400">
-              <Users className="h-3 w-3" />
-              <span className="font-semibold text-slate-300">{formatCount(platform.followers)}</span>
-            </div>
             <ExternalLink className="h-4 w-4 text-slate-500" />
           </div>
         </div>

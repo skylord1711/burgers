@@ -5,7 +5,6 @@ export interface SocialPlatform {
   username: string;
   url: string;
   description: string;
-  followers: number;
   isLive?: boolean;
 }
 
@@ -29,7 +28,6 @@ export interface ConnectSettings {
 
 export interface SiteSettings {
   isLive: boolean;
-  followerGoal: number;
   mainGame: string;
   primaryColor: string;
   secondaryColor: string;

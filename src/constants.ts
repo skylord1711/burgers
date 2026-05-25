@@ -2,7 +2,6 @@ import type { SiteSettings } from "./types";
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   isLive: false,
-  followerGoal: 15000,
   mainGame: "Minecraft",
   primaryColor: "#3b82f6",
   secondaryColor: "#a855f7",
@@ -14,7 +13,6 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       username: "@burger_frosty",
       url: "https://tiktok.com/@burger_frosty",
       description: "Short clips & funny moments",
-      followers: 8500,
       isLive: false,
     },
     {
@@ -24,7 +22,6 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       username: "BurgerFrosty",
       url: "https://discord.gg/burgerfrosty",
       description: "Join the community!",
-      followers: 3200,
       isLive: false,
     },
   ],

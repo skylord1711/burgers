@@ -7,7 +7,6 @@ import {
   EyeOff,
   Power,
   Gamepad2,
-  Target,
   Palette,
   Save,
   Trash2,
@@ -49,7 +48,6 @@ export default function ControlPanel({
   const [showPassword, setShowPassword] = useState(false);
   const [loginError, setLoginError] = useState("");
 
-  const [followerGoalInput, setFollowerGoalInput] = useState(String(settings.followerGoal));
   const [localPrimary, setLocalPrimary] = useState(settings.primaryColor);
   const [localSecondary, setLocalSecondary] = useState(settings.secondaryColor);
 
@@ -75,14 +73,6 @@ export default function ControlPanel({
   const handleSaveColors = () => {
     updateSettings({ primaryColor: localPrimary, secondaryColor: localSecondary });
     addToast("Theme colors updated!", "success");
-  };
-
-  const handleSaveGoal = () => {
-    const val = parseInt(followerGoalInput, 10);
-    if (!isNaN(val) && val > 0) {
-      updateSettings({ followerGoal: val });
-      addToast("Follower goal updated!", "success");
-    }
   };
 
   const handleToggleLive = () => {
@@ -217,28 +207,6 @@ export default function ControlPanel({
           </div>
         </GlassCard>
 
-        {/* Follower Goal & Main Game */}
-        <GlassCard>
-          <div className="flex items-center gap-3 mb-4">
-            <Target className="h-5 w-5 text-primary" />
-            <h3 className="font-bold text-white text-sm">Follower Goal</h3>
-          </div>
-          <div className="flex gap-2">
-            <input
-              type="number"
-              value={followerGoalInput}
-              onChange={(e) => setFollowerGoalInput(e.target.value)}
-              className="flex-1 rounded-xl bg-white/5 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-primary/50"
-            />
-            <button
-              onClick={handleSaveGoal}
-              className="rounded-xl bg-primary/20 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/30 transition-colors"
-            >
-              Save
-            </button>
-          </div>
-        </GlassCard>
-
         <GlassCard>
           <div className="flex items-center gap-3 mb-4">
             <Gamepad2 className="h-5 w-5 text-secondary" />
@@ -338,27 +306,16 @@ export default function ControlPanel({
                   onChange={(e) => updateSocialPlatform(platform.id, { description: e.target.value })}
                   className="w-full rounded-lg bg-white/5 border border-white/10 px-2.5 py-1.5 text-xs text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
                 />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <label className="flex items-center gap-1.5 text-xs text-slate-400">
                     <input
-                      type="number"
-                      placeholder="Followers"
-                      value={platform.followers}
-                      onChange={(e) =>
-                        updateSocialPlatform(platform.id, { followers: parseInt(e.target.value) || 0 })
-                      }
-                      className="w-24 rounded-lg bg-white/5 border border-white/10 px-2.5 py-1.5 text-xs text-white focus:outline-none focus:ring-1 focus:ring-primary/50"
+                      type="checkbox"
+                      checked={platform.isLive || false}
+                      onChange={(e) => updateSocialPlatform(platform.id, { isLive: e.target.checked })}
+                      className="rounded bg-white/10 border-white/20"
                     />
-                    <label className="flex items-center gap-1.5 text-xs text-slate-400">
-                      <input
-                        type="checkbox"
-                        checked={platform.isLive || false}
-                        onChange={(e) => updateSocialPlatform(platform.id, { isLive: e.target.checked })}
-                        className="rounded bg-white/10 border-white/20"
-                      />
-                      LIVE
-                    </label>
-                  </div>
+                    LIVE
+                  </label>
                 </div>
               </div>
             ))}
