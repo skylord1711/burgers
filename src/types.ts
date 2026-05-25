@@ -1,0 +1,51 @@
+export interface SocialPlatform {
+  id: string;
+  name: string;
+  icon: string;
+  username: string;
+  url: string;
+  description: string;
+  followers: number;
+  isLive?: boolean;
+}
+
+export interface ScheduleDay {
+  day: string;
+  time: string | null;
+  emoji: string;
+}
+
+export interface ConnectSettings {
+  welcomeText: string;
+  minecraftJavaIP: string;
+  minecraftBedrockIP: string;
+  minecraftBedrockPort: string;
+  minecraftOnline: boolean;
+  supportText: string;
+  button1Label: string;
+  button1Icon: string;
+  button1Url: string;
+  button2Label: string;
+  button2Icon: string;
+  button2Url: string;
+}
+
+export interface SiteSettings {
+  isLive: boolean;
+  followerGoal: number;
+  mainGame: string;
+  primaryColor: string;
+  secondaryColor: string;
+  socialPlatforms: SocialPlatform[];
+  schedule: ScheduleDay[];
+  connect: ConnectSettings;
+  clickStats: Record<string, number>;
+}
+
+export type ToastType = "success" | "error";
+
+export interface ToastMessage {
+  id: string;
+  message: string;
+  type: ToastType;
+}
