@@ -17,10 +17,7 @@ export interface ScheduleDay {
 
 export interface ConnectSettings {
   welcomeText: string;
-  minecraftJavaIP: string;
-  minecraftBedrockIP: string;
-  minecraftBedrockPort: string;
-  minecraftOnline: boolean;
+
   supportText: string;
   button1Label: string;
   button1Icon: string;

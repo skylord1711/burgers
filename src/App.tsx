@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 
 function AppContent() {
   const { settings, updateSettings, updateSocialPlatform, trackClick, resetStats } = useSettings();
-  const { toasts, addToast, removeToast } = useToast();
+  const { toasts, removeToast } = useToast();
 
   return (
     <Routes>
@@ -19,7 +19,6 @@ function AppContent() {
           <HomePage
             settings={settings}
             trackClick={trackClick}
-            addToast={addToast}
             toasts={toasts}
             removeToast={removeToast}
           />

@@ -27,26 +27,6 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       followers: 3200,
       isLive: false,
     },
-    {
-      id: "twitch",
-      name: "Twitch",
-      icon: "twitch",
-      username: "burgerfrosty",
-      url: "https://twitch.tv/burgerfrosty",
-      description: "Live streams daily",
-      followers: 6200,
-      isLive: true,
-    },
-    {
-      id: "youtube",
-      name: "YouTube",
-      icon: "youtube",
-      username: "BurgerFrosty",
-      url: "https://youtube.com/@burgerfrosty",
-      description: "VODs & highlights",
-      followers: 10400,
-      isLive: false,
-    },
   ],
   schedule: [
     { day: "Monday", time: "9:45PM EST", emoji: "🍔" },
@@ -60,13 +40,10 @@ export const DEFAULT_SETTINGS: SiteSettings = {
   connect: {
     welcomeText:
       "Welcome to the Burger Stream! I'm Frosty — a burger-obsessed streamer playing games, making content, and building the tastiest community on the internet. Grab a seat, grab a burger, and let's hang out!",
-    minecraftJavaIP: "play.burgerfrosty.com",
-    minecraftBedrockIP: "play.burgerfrosty.com",
-    minecraftBedrockPort: "19132",
-    minecraftOnline: true,
+
     supportText:
       "Love what I do? Consider supporting the stream! Your support helps me get better equipment, more games, and of course — more burgers.",
-    button1Label: "📺 Watch on Twitch",
+    button1Label: "📺 Watch Live",
     button1Icon: "twitch",
     button1Url: "https://twitch.tv/burgerfrosty",
     button2Label: "💬 Join Discord",

@@ -14,7 +14,6 @@ import {
   BarChart3,
   Globe,
   MessageCircle,
-  Server,
   LogOut,
 } from "lucide-react";
 import GlassCard from "../components/GlassCard";
@@ -429,61 +428,6 @@ export default function ControlPanel({
                   }
                   className="w-full rounded-lg bg-white/5 border border-white/10 px-2.5 py-1.5 text-xs text-white font-mono focus:outline-none focus:ring-1 focus:ring-primary/50"
                 />
-              </div>
-            </div>
-
-            <div className="border-t border-white/10 pt-3">
-              <div className="flex items-center gap-2 mb-3">
-                <Server className="h-4 w-4 text-primary" />
-                <span className="text-xs font-bold text-slate-300 uppercase tracking-wider">Minecraft Server</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <div>
-                  <label className="block text-xs text-slate-400 mb-1">Java IP</label>
-                  <input
-                    type="text"
-                    value={settings.connect.minecraftJavaIP}
-                    onChange={(e) =>
-                      updateSettings({ connect: { ...settings.connect, minecraftJavaIP: e.target.value } })
-                    }
-                    className="w-full rounded-lg bg-white/5 border border-white/10 px-2.5 py-1.5 text-xs text-white font-mono focus:outline-none focus:ring-1 focus:ring-primary/50"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs text-slate-400 mb-1">Bedrock IP</label>
-                  <input
-                    type="text"
-                    value={settings.connect.minecraftBedrockIP}
-                    onChange={(e) =>
-                      updateSettings({ connect: { ...settings.connect, minecraftBedrockIP: e.target.value } })
-                    }
-                    className="w-full rounded-lg bg-white/5 border border-white/10 px-2.5 py-1.5 text-xs text-white font-mono focus:outline-none focus:ring-1 focus:ring-primary/50"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs text-slate-400 mb-1">Bedrock Port</label>
-                  <input
-                    type="text"
-                    value={settings.connect.minecraftBedrockPort}
-                    onChange={(e) =>
-                      updateSettings({ connect: { ...settings.connect, minecraftBedrockPort: e.target.value } })
-                    }
-                    className="w-full rounded-lg bg-white/5 border border-white/10 px-2.5 py-1.5 text-xs text-white font-mono focus:outline-none focus:ring-1 focus:ring-primary/50"
-                  />
-                </div>
-                <div className="flex items-end pb-1.5">
-                  <label className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <input
-                      type="checkbox"
-                      checked={settings.connect.minecraftOnline}
-                      onChange={(e) =>
-                        updateSettings({ connect: { ...settings.connect, minecraftOnline: e.target.checked } })
-                      }
-                      className="rounded bg-white/10 border-white/20"
-                    />
-                    Online
-                  </label>
-                </div>
               </div>
             </div>
 

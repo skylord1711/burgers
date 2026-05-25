@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { AnimatePresence } from "framer-motion";
-import type { SiteSettings, ToastMessage, ToastType } from "../types";
+import type { SiteSettings, ToastMessage } from "../types";
 import { TAB_NAMES } from "../constants";
 import Spinner from "../components/Spinner";
 import AnimatedBackground from "../components/AnimatedBackground";
@@ -30,7 +30,6 @@ export function useSettingsContext() {
 interface HomePageProps {
   settings: SiteSettings;
   trackClick: (id: string) => void;
-  addToast: (message: string, type?: ToastType) => void;
   toasts: ToastMessage[];
   removeToast: (id: string) => void;
 }
@@ -38,7 +37,6 @@ interface HomePageProps {
 export default function HomePage({
   settings,
   trackClick,
-  addToast,
   toasts,
   removeToast,
 }: HomePageProps) {
@@ -49,10 +47,6 @@ export default function HomePage({
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
-
-  const handleCopy = (message: string) => {
-    addToast(message, "success");
-  };
 
   return (
     <SettingsContext.Provider value={{ settings, trackClick }}>
@@ -66,7 +60,7 @@ export default function HomePage({
         <AnimatePresence mode="wait">
           {activeTab === "Links" && <LinksTab key="links" platforms={settings.socialPlatforms} onTrack={trackClick} />}
           {activeTab === "Schedule" && <ScheduleTab key="schedule" schedule={settings.schedule} />}
-          {activeTab === "Connect" && <ConnectTab key="connect" connect={settings.connect} onCopy={handleCopy} />}
+          {activeTab === "Connect" && <ConnectTab key="connect" connect={settings.connect} />}
         </AnimatePresence>
       </div>
 
