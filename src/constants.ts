@@ -1,6 +1,6 @@
 import type { SiteSettings } from "./types";
 
-export const SETTINGS_VERSION = 2;
+export const SETTINGS_VERSION = 3;
 
 export const DEFAULT_SETTINGS: SiteSettings = {
   _version: SETTINGS_VERSION,
@@ -25,6 +25,15 @@ export const DEFAULT_SETTINGS: SiteSettings = {
       username: "BurgerFrosty",
       url: "https://discord.gg/burgerfrosty",
       description: "Join the community!",
+      isLive: false,
+    },
+    {
+      id: "linktree",
+      name: "Linktree",
+      icon: "linktree",
+      username: "Amburg3rss",
+      url: "https://linktr.ee/Amburg3rss",
+      description: "All my links in one place",
       isLive: false,
     },
   ],
